@@ -1,26 +1,4 @@
 <template>
-<!--  <v-container class="fill-height" fluid>-->
-<!--    <v-row no-gutters align="center" justify="center">-->
-<!--      <v-col>-->
-<!--        <v-card-->
-<!--            class="pa-2"-->
-<!--            outlined-->
-<!--            tile-->
-<!--          >-->
-<!--            Column 1-->
-<!--          </v-card>-->
-<!--        </v-col>-->
-<!--      <v-col>-->
-<!--        <v-card-->
-<!--          class="pa-2"-->
-<!--          outlined-->
-<!--          tile-->
-<!--        >-->
-<!--          Column 2-->
-<!--        </v-card>-->
-<!--      </v-col>-->
-<!--        </v-row>-->
-<!--  </v-container>-->
   <v-container fluid fill-height>
     <v-row align="center" justify="center">
       <v-col xs="12" sm="12" md="8">
@@ -45,6 +23,7 @@ import SocialAuthButtons from '../components/authentication/SocialAuthButtons'
 
 export default {
   name: 'Login',
+  auth: false,
   components: {
     RegistrationForm,
     SocialAuthButtons

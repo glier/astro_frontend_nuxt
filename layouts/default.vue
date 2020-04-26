@@ -53,7 +53,11 @@
       flat
       app
     >
-      <v-toolbar-title>Astro</v-toolbar-title>
+      <v-toolbar-title>
+        <nuxt-link to="/">
+          Astro
+        </nuxt-link>
+      </v-toolbar-title>
       <v-spacer />
       <v-spacer />
       <v-spacer />
@@ -94,11 +98,11 @@
     <v-content>
       <nuxt />
     </v-content>
-<!--    <v-footer-->
-<!--      app-->
-<!--    >-->
-<!--      <span>&copy; {{ new Date().getFullYear() }}</span>-->
-<!--    </v-footer>-->
+  <!--    <v-footer-->
+  <!--      app-->
+  <!--    >-->
+  <!--      <span>&copy; {{ new Date().getFullYear() }}</span>-->
+  <!--    </v-footer>-->
   </v-app>
 </template>
 
@@ -213,7 +217,5 @@ export default {
 </script>
 
 <style scoped>
-.theme--light.v-application {
-  background: #eeeeee !important;
-}
+
 </style>

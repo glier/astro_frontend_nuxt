@@ -3,7 +3,7 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   server: {
     port: 3000, // default: 3000
-    host: '192.168.111.34' // default: localhost
+    host: '192.168.111.50' // default: localhost
   },
   mode: 'universal',
   /*
@@ -49,13 +49,41 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // Doc: https://auth.nuxtjs.org
+    '@nuxtjs/auth',
     '@nuxtjs/pwa'
   ],
+  router: {
+    middleware: ['auth']
+  },
+  auth: {
+    redirect: {
+      login: '/login', // redirect user when not connected
+      callback: '/auth/signed-in'
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/auth/signin', method: 'post', propertyName: 'accessToken' },
+          logout: { url: '/api/auth/logout', method: 'post' },
+          user: { url: '/api/auth/user', method: 'get', propertyName: 'user' }
+        }
+      }
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    proxy: true
+  },
+  proxy: {
+    '/api/': {
+      target: 'http://localhost:8080/',
+      // pathRewrite: { '^/api/': '' },
+      changeOrigin: true
+    }
   },
   /*
   ** vuetify module configuration
@@ -74,13 +102,13 @@ export default {
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
-          background: '#eeeeee',
+          background: '#eeeeee'
         },
         light: {
           primary: colors.red.darken1, // #E53935
           secondary: colors.red.lighten4, // #FFCDD2
           accent: colors.indigo.base, // #3F51B5
-          background: colors.red.darken1,
+          background: colors.red.darken1
         }
       }
     }
