@@ -26,6 +26,9 @@ export default {
   components: {
     LoginForm,
     SocialAuthButtons
+  },
+  created () {
+    if (this.$auth.loggedIn) { this.$router.replace('/') }
   }
 }
 </script>

@@ -39,31 +39,33 @@
       <v-btn
         class="my-5"
         color="#4285f4"
-        v-bind:disabled="!checkboxPolicy"
+        :disabled="!checkboxPolicy"
         large
-        block>
+        block
+      >
         <v-avatar left size="36" class="mx-auto">
-          <v-img src="google.svg"></v-img>
+          <v-img src="google.svg" />
         </v-avatar>
         <v-divider
           class="mx-4"
           vertical
-        ></v-divider>
+        />
         Войти через Google
       </v-btn>
       <v-btn
         class="mb-5"
         color="#3b5998"
-        v-bind:disabled="!checkboxPolicy"
+        :disabled="!checkboxPolicy"
         large
-        block>
+        block
+      >
         <v-avatar left size="36" class="mx-auto">
-          <v-img src="facebook.svg"></v-img>
+          <v-img src="facebook.svg" />
         </v-avatar>
         <v-divider
           class="mx-4"
           vertical
-        ></v-divider>
+        />
         Войти через Facebook
       </v-btn>
     </v-card-text>

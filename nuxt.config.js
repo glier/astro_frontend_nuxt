@@ -24,7 +24,10 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: {
+    color: '#ff0000',
+    height: '2px'
+  },
   /*
   ** Global CSS
   */
@@ -58,8 +61,10 @@ export default {
   },
   auth: {
     redirect: {
-      login: '/login', // redirect user when not connected
-      callback: '/auth/signed-in'
+      login: '/login',
+      logout: '/',
+      callback: '/',
+      home: '/'
     },
     strategies: {
       local: {
